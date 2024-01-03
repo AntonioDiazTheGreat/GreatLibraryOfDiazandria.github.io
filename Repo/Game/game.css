@@ -1,0 +1,333 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+}
+#player{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+}
+#player #collisionbox{
+    min-width: 45px;
+    min-height: 45px;
+    opacity: 0;
+    background-color: red;
+    position: absolute;
+}
+.walls{
+    position: relative;
+    background-color: gray;
+    
+}
+#wall1{
+    width: 560px;
+    height: 50px;
+    left: 600px;
+    top: 600px;
+}
+#wall2{
+    width: 560px;
+    height: 50px;
+    left: 300px;
+    top: 100px;
+    transform: rotate(90deg);
+}
+#pointerindicator{
+    min-width: 90px;
+    min-height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+#pointerindicator #pointer{
+    width: 20px;
+    height: 10px;
+    border-radius: 0 0 50% 50%;
+    background-color: rgb(94, 92, 92);
+    position: absolute;
+    opacity: 0.5;
+}
+#pointerindicator #swordcont{
+    min-height: 100px;
+    min-width: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+#pointerindicator #swordcont #samuraisword{
+    width: 70px;
+    height: 60px;
+    position: relative;
+    transform: rotate(225deg);
+    top: 95px;
+    transition: 1s;
+}
+#effect1, #effect2, #effect3{
+    border-radius: 15px;
+    background-color: white;
+    opacity: 0.4;
+    position: absolute;
+}
+#effect1{
+    max-height: 5px;
+    max-width: 25px;
+    min-height: 5px;
+    min-width: 25px;
+    bottom: -50%;
+    left: 10%;
+}
+#effect2{
+    max-height: 5px;
+    max-width: 15px;
+    min-height: 5px;
+    min-width: 15px;
+    bottom: -38%;
+    left: 0%;
+}
+#effect3{
+    max-height: 5px;
+    max-width: 6px;
+    min-height: 5px;
+    min-width: 6px;
+    bottom: -50%;
+    left: -10%;
+}
+#enemycont{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+}
+#enemycont2{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+}
+#enemycont .enemy{
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    position: absolute;
+}
+#enemycont2 .second{
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#projectile{
+    position: relative;
+    min-width: 8px;
+    min-height: 25px;
+    max-width: 8px;
+    max-height: 25px;
+    background-color: purple;
+}
+#projectile2{
+    position: relative;
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 250px;
+    max-height: 250px;
+    background-color: rgb(153, 106, 114);
+    border-radius: 180px;
+}
+.animated{
+    animation: dropleteffect 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes dropleteffect{
+    0%{
+        background-color: none;
+        scale: 100%;
+    }
+    50%{
+        scale: 120%;
+    }
+    100%{
+        background-color: turquoise;
+        scale: 100%;
+    }
+}
+.enemydetails{
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    position: absolute;
+    border: solid white 1px;
+    border-radius: 20px 0px 20px 0px;
+    rotate: 45deg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.enemydetails .eye{
+    min-width: 17px;
+    max-width: 17px;
+    min-height: 17px;
+    max-height: 17px;
+    border-radius: 180px;
+    background-color: white;
+}
+.enemydetails .eye .eyeball{
+    background-color: black;
+    min-width: 5px;
+    max-width: 5px;
+    min-height: 5px;
+    max-height: 5px;
+    border-radius: 90px;
+    position: relative;
+    top: 4px;
+    left: 3px;
+}
+.enemydetails .eye2{
+    min-width: 17px;
+    max-width: 17px;
+    min-height: 17px;
+    max-height: 17px;
+    border-radius: 180px;
+}
+.enemydetails .eye2 .eyeball2{
+    background-color: white;
+    min-width: 5px;
+    max-width: 5px;
+    min-height: 5px;
+    max-height: 5px;
+    border-radius: 90px;
+    position: relative;
+    top: 4px;
+    left: 3px;
+}
+.grass{
+    border-radius: 180px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    z-index: -1;
+}
+.patchAdult{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+}
+.patchChild{
+    background-color: rgb(53, 156, 53);
+}
+.Proj1{
+    animation: firstProjAnim 1.5s;
+    animation-timing-function: linear;
+    bottom: 28px;
+    left: 11px;
+}
+.Proj2{
+    animation: secondProjAnim 1.5s;
+    animation-timing-function: linear;
+    bottom: 20px;
+    right: 20px;
+}
+.Proj3{
+    animation: thirdProjAnim 1.5s;
+    animation-timing-function: linear;
+    bottom: 45px;
+    left: 42px;
+}
+.Proj4{
+    animation: fourthProjAnim 1.5s;
+    animation-timing-function: linear;
+    bottom: 42px;
+    left: 11px;
+}
+@keyframes firstProjAnim{
+    100%{
+        transform: translateY(-1000px);
+    }
+}
+@keyframes secondProjAnim{
+    100%{
+        transform: translateX(-1000px);
+    }
+}
+@keyframes thirdProjAnim{
+    100%{
+        transform: translateX(1000px);
+    }
+}
+@keyframes fourthProjAnim{
+    100%{
+        transform: translateY(1000px);
+    }
+}
+.projFlash{
+    animation: flash 0.5s;
+    animation-iteration-count: 2;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes flash{
+    0%{
+        background-color: rgb(153, 106, 114);
+    }
+    100%{
+        background-color: transparent;
+    }
+}
+#UI{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    opacity: 0.9;
+}
+#healthBar{
+    border-radius: 70px;
+    border: solid gray 12px;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.health{
+    background-color: green;
+    width: 20px;
+    height: 50px;
+    flex: 1;
+}
+#superbar{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    margin: 10px;
+    justify-content:space-evenly;
+    align-items: center;
+    gap: 0.5em;
+}
+#superbar .barslot{
+    height: 50px;
+    margin: 10px;
+    max-width: 50px;
+    flex: 1;
+    border: solid rgb(59, 58, 58) 2px;
+    border-radius: 0px 120px 100px 120px;
+    rotate: 45deg;
+}
