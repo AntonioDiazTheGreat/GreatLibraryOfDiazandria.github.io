@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Counter</title>
+</head>
+<body>
+    <input type="text" id="secondCounter" value="0" readonly>
+
+    <script>
+        const secondCounter = document.getElementById("secondCounter");
+
+        let seconds = 0;
+
+        function updateCounter() {
+            secondCounter.value = seconds;
+        }
+
+        function incrementSeconds() {
+            seconds++;
+            updateCounter();
+        }
+
+        const interval = setInterval(incrementSeconds, 1000);
+        
+    </script>
+</body>
+</html>
