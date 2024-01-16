@@ -1,0 +1,142 @@
+:root{
+    --main: #0b090a;
+    --ui: #161a1d;
+    --text: #b1a7a6;
+}
+body{
+    background-color: var(--main);
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text);
+}
+.binger{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    height: 9vh;
+    background-color: var(--ui);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2em;
+}
+.bigMenu{
+    gap: 2em;
+}
+.menuButtons{
+    gap: 1em;
+}
+.menuButtons a{
+    font-size: 20px;
+    cursor: pointer;
+}
+.menu{
+    width: 3em;
+    height: 3em;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    cursor: pointer;
+}
+.tripalovski{
+    width: 100%;
+    background-color: var(--text);
+    height: 6px;
+}
+header a{
+    font-size: 32px;
+    text-decoration: none;
+    color: var(--text);
+}
+#main{
+    display: grid;
+    grid-template-areas: 
+    "N B";
+    grid-template-columns: 1fr 8fr;
+    height:91vh;
+}
+#projNav{
+    grid-area: "N";
+    background-color: var(--ui);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    gap: 3em;
+}
+.project{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    border: solid var(--main) 4px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+#projNav .project:first-child{
+    background-image: url(src/bossFighting.png);
+}
+#projNav .project:nth-child(2){
+    background-image: url(src/squareplace.png);
+}
+#projNav .project:nth-child(3){
+    background-image: url(src/nuke.png);
+}
+#projDesc {
+    grid-area: "B";
+    display: grid;
+    padding: 5em;
+    grid-template-areas: 
+        "H"
+        "D"
+        "L";
+    grid-template-rows: 1fr 2fr 1fr;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+#projDesc::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('your-image.jpg') center/cover;
+    z-index: 0;
+}
+
+#projDesc::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
+#projDesc > * {
+    position: relative;
+    z-index: 2;
+}
+#projDesc h1{
+    font-size: 60px;
+}
+#projDesc p{
+    text-align: center;
+    display: flex;
+    margin: 2em auto;
+    align-items: center;
+}
+#projDesc a{
+    color: green;
+    text-decoration: none;
+    font-size: 32px;
+    text-align: center;
+}

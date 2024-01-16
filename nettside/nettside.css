@@ -1,0 +1,363 @@
+*{
+    transition: 0.5s;
+    font-family: sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.wrapper1, .wrapper2, .wrapper3{
+    background-color: white;
+}
+.wrapper1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    height: fit-content;
+
+}
+.wrapper2{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 2.5fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    height: 100vh;
+    grid-template-areas: 
+    "N H H"
+    "N M P"
+    "N F F";
+}
+.wrapper2 div:nth-child(1){
+    grid-area: N;
+}
+.wrapper2 div:nth-child(2){
+    grid-area: H;
+}
+.wrapper2 div:nth-child(3){
+    grid-area: M;
+}
+.wrapper2 div:nth-child(4){
+    grid-area: P;
+}
+.wrapper2 div:nth-child(5){
+    grid-area: F ;
+}
+.wrapper3{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 4;
+    grid-template-rows: 1fr 1.5fr 1.5fr 1fr 1fr;
+    height: 100vh;
+    grid-template-areas: 
+    "H H H H"
+    "N P1 P2 M"
+    "N P3 P4 M"
+    "N U U U"
+    "N F F F";
+}
+.wrapper3 div:nth-child(1){
+    grid-area: N;
+}
+.wrapper3 div:nth-child(2){
+    grid-area: H;
+}
+.wrapper3 div:nth-child(3){
+    grid-area: M;
+}
+.wrapper3 div:nth-child(4){
+    grid-area: F;
+}
+.wrapper3 div:nth-child(5){
+    grid-area: U ;
+}
+.wrapper3 div:nth-child(6){
+    grid-area: P1;
+}
+.wrapper3 div:nth-child(7){
+    grid-area: P2;
+}
+.wrapper3 div:nth-child(8){
+    grid-area: P3;
+}
+.wrapper3 div:nth-child(9){
+    grid-area: P4;
+}
+.wrapper1 .griditem{
+    min-height: 19.55vh;
+}
+.griditem{
+    min-height: 100%;
+    max-height: 1em;
+    min-width: 100%;
+    max-width: 1em;
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden;
+}
+#mainbtns{
+    width: fit-content;
+    background-color: transparent;
+    display: flex;
+    grid-area: M;
+}
+.topbtn:first-child{
+    padding: 10px 5px;
+}
+.topbtn{
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-bottom: solid gray 1px;
+    background-color: transparent;
+}
+#x, #y{
+    max-width: 25px;
+    text-align: center;
+    margin-right: 10px;
+    position: fixed;
+    left: 0.5%;
+    top: 1%;
+    opacity: 0.5;
+    color: gray;
+    padding: 5px;
+    border: solid gray 1px;
+    border-radius: 8px;
+}
+#x{
+    opacity: 1;
+    color: white;
+}
+#menu, #setmenu, #editmenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    min-width: fit-content;
+}
+#setmenu{
+    min-height: 65vh;
+}
+label{
+    color: white;
+    margin: 10px 0;
+}
+
+#menu{
+    background-color: transparent;
+    flex-direction: row;
+}
+#menu button, #templatesmenu button{
+    background-color: transparent;
+    color: rgb(10, 100, 100);
+    border: none;
+    border-bottom: solid gray 1px;
+    padding: 10px;
+    margin: 5px 0;
+    position: relative;
+}
+#menu button:first-child, #templatesmenu button:first-child{
+    margin-left: 20px;
+    border-left: solid 1px gray;
+}
+#menu button:last-child{
+    color: white;
+}
+#menu button:nth-last-child(2){
+    color: maroon;
+}
+#templatesmenu button:first-child{
+    margin-left: 13.2em;
+}
+button{
+    height: fit-content;
+    flex: 1;
+}
+footer, header, main, nav, #clonep, #clear{
+    display: none;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    max-height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#cloneelements input{
+    display: none;
+}
+#cloneelements{
+    display: none;
+}
+footer{
+    background-color: red;
+}
+header{
+    background-color: blue;
+    flex-direction: row;
+    justify-content: space-around;
+}
+main{
+    background-color: green;
+    scale: 95%;
+    border-radius: 20px;
+}
+#clonep{
+    border-radius: 20px;
+    background-color: maroon;
+    scale: 90%;
+}
+nav{
+    align-items:baseline;
+    padding-left: 2em;
+    scale: 95%;
+    border-radius: 20px;
+}
+#paragraf{
+    background-color: transparent;
+    margin: default;
+}
+nav{
+    background-color: purple;
+}
+.options{
+    margin: 4px 0;
+    width: 100%;
+}
+.template{
+    margin: 4px 0;
+}
+#clear{
+    background-color: transparent;
+    background-image: none;
+}
+.switch input{
+    width: 60px;
+    opacity: 0;
+    cursor:pointer;
+}
+.switch{
+    height: 32px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.slider{
+    background-color: rgb(109, 108, 108);
+    border-radius: 2em;
+    height: 100%;
+    width: 65%;
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.slider:before{
+    position: absolute;
+    background-color: aliceblue;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 6px;
+    right: 4px;
+    border-radius: 2em;
+    transition: 0.5s;
+}
+.switch input:checked + .slider:before{
+    transform: translateX(-36px);
+}
+.switch input:checked + .slider{
+    background-color: rgb(156, 155, 155);
+}
+#editwrap{
+    background-color: white;
+    border: solid black 1px;
+    height: fit-content;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    min-height: 80px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+}
+.clonebtn{
+    background-color: transparent;
+    border: solid black 1px;
+    cursor: pointer;
+    padding: 2px;
+    margin: 2px;
+}
+#editwrap button:nth-child(3), #editwrap button:nth-child(4){
+    float: inline-end;
+}
+p, h1{
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    scale: max-content;
+}
+#y{
+    z-index: 2;
+}
+#toolwrap{
+    min-height: 25vh;
+    height: fit-content;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#toolwrap2{
+    z-index: -1;
+    position: fixed;
+    min-width: 25vw;
+    min-height: 65vh;
+    top: 29%; 
+    left: 1.2%;  
+    padding: 10px;
+    border: solid white 1px;
+    border-radius: 15px;
+}
+#maintitle{
+    color: white;
+    font-size: 50px;
+    margin: 10px;
+}
+img{
+    width: 6em;
+}
+#wrappist{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-areas: 
+    "M"
+    "X";
+    height: 10vh;
+    margin-left: 50px;
+}
+#wrappistitems{
+    min-height: 1em;
+    max-height: 1em;
+}
+.imagediv{
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+#imgcont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+a{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    color: transparent;
+}

@@ -1,0 +1,296 @@
+*{
+    transition: 0.5s;
+}
+body{
+    margin: 0;
+    background-color: black;
+}
+.wrapper{
+    height: 100%;
+}
+.uiwrap{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 4fr 1fr;
+    grid-template-areas: 
+    "S M M"
+    "S C C";
+    gap: 5px;
+    height: 100%;
+}
+#controlpanel{
+    background-color: rgb(41, 41, 65);
+    grid-area: C;
+}
+#sidepanel{
+    background-color: rgb(80, 79, 79);
+    grid-area: S;
+}
+#sidepanelbackcont{
+    bottom: 0;
+    position: absolute;
+    width: 12.9%;
+    display: flex;
+    justify-content: center;
+}
+#sidepanelback{
+    bottom: 5px;
+    position: absolute;
+    font-size: 160%;
+    text-decoration: none;
+    color: black;
+}
+#sidepanelback:hover{
+    color: navy;
+    text-decoration: underline;
+}
+#map{
+    background-color: rgb(17, 17, 17);
+    background-image: url("/Source/Map/Europe.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-area: M;
+}
+p{
+    margin: 0;
+    padding: 0;
+
+}
+#variablecont{
+    width:100%;
+    height: 20%;
+}
+.sideinfo{
+    height: 20%;
+    min-width: 150px;
+    margin-left: 5%;
+    font-size: 150%;
+    padding-top: 10px;
+}
+#buycont{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2em;
+    padding: 10px;
+    width: 50%;
+}
+.actionbtns{
+    font-size: 140%;
+    border-radius: 15px;
+    padding: 10px;
+}
+.menupanel{
+    margin: 0;
+    position: absolute;
+    bottom: 22%;
+    z-index: 1;
+    background-color: rgb(53, 53, 53);
+    width: 10%;
+    height: 25%;
+    padding: 1%;
+    padding-top: 0.5%;
+    min-width: 180px;
+}
+#buymenubtn{
+    background-color: green;
+}
+#buymenu{
+    left: 17.7%;
+}
+.buybtns{
+    background-color: rgb(114, 93, 93);
+    width: 100%;
+    margin-top: 4%;
+}
+#researchmenubtn{
+    background-color: blue;
+}
+#researchmenu{
+    left: 32.2%;
+}
+#nukemenubtn{
+    background-color: gray;
+}
+#nukemenu{
+    left: 46.5%;
+}
+#nuke1{
+    background-color: rgb(114, 93, 93);
+    width: 100%;
+    height: 17%;
+    margin-top: 4%;
+}
+#nuke2{
+    background-color: rgba(240, 248, 255, 0);
+    width: 100%;
+    height: 17%;
+    margin-top: 4%;
+}
+#nuke3{
+    background-color: rgba(240, 248, 255, 0);
+    width: 100%;
+    height: 17%;
+    margin-top: 4%;
+}
+#nuke4{
+    background-color: rgba(240, 248, 255, 0);
+    width: 100%;
+    height: 17%;
+    margin-top: 4%;
+}
+#nuke5{
+    background-color: rgba(240, 248, 255, 0);
+    width: 100%;
+    height: 17%;
+    margin-top: 4%;
+}
+#turnbtn{
+    background-color: rgb(148, 124, 92);
+}
+#defencebtn{
+    background-color: rgb(148, 124, 92);
+}
+#germany{
+    position: absolute;
+    height: 17%;
+    left: 21%;
+    top: 46%;
+}
+#russia{
+    position: relative;
+    height: 50%;
+    left: 32%;
+    top: 22%;
+    width: 70%;
+}
+#japan{
+    position: absolute;
+    height: 30%;
+    top: 43%;
+    left: 43%;
+}
+.countryinfo{
+    background-color: rgb(53, 53, 53);
+    padding: 10px;
+    width: 10%;
+    position: absolute;
+    border-radius: 10px;
+}
+.countryinfo h1{
+    margin-top: 0;
+}
+.countryinfo button{
+    width: 100%;
+    height: 5%;
+    margin: 4%;
+    margin-left: 0;
+    background-color: crimson;
+    font-size: 150%;
+}
+.countryinfo p{
+    font-size: 120%;
+    padding: 2px;
+}
+#germanyinfo{
+    left: 18%;
+    top: 17%;
+}
+#russiainfo{
+    left: 55%;
+    top: 16%;
+}
+#japaninfo{
+    left: 43.5%;
+    top: 16%;
+}
+#mapselector{
+    background-color: rgb(53, 53, 53);;
+    width: 5%;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    z-index: +2;
+}
+#mapselector button{
+    width: 100%;
+    margin: 5px;
+    margin-left: 0;
+    background-color: gray;
+    background-size:contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+#eubtn{
+    background-image: url("/Source/Map/Europeflag.png");
+}
+#jpnbtn{
+    background-image: url("/Source/Map/Japanflag.png");
+}
+.eventwrap, .choicewrap{
+    width: 40vw;
+    height: 82vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "P H"
+    "P G"
+    "B B";
+    ;
+    background-color:rgb(25, 24, 24);
+    color: white;
+    padding: 25px;
+    gap: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 3;
+    justify-content: center;
+}
+.choicewrap{
+    width: 58vw;
+    grid-template-areas: 
+    "P H"
+    "P G"
+    "P B";
+    ;
+}
+#good{
+    grid-area: B2;
+}
+#eventpic1{
+    grid-area: P;
+    margin-top: 25px;
+    width: 100%;
+    height: 100%;
+    scale: 80%;
+    aspect-ratio: 1000 / 1359;
+    border: solid gray 3px;
+}
+#eventpic2{
+    grid-area: P;
+    margin: 10px;
+    margin-top: 25px;
+    border: solid gray 3px;
+}
+.eventhead{
+    grid-area: H;
+    margin-top: 50px;
+}
+.eventparagraf1, #eventparagraf2{
+    grid-area: G;
+    margin: 0;
+}
+.eventbtn{
+    grid-area: B;
+    height: 30px;
+    background-color: gray;
+    font-weight: bold;
+    width: 100%;
+    margin: 10px;
+}

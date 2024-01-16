@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SquarePlace</title>
+    <link rel="stylesheet" href="nettside.css">
+    <link rel="icon" type="image/x-icon" href="https://media-www.sqspcdn.com/logos/favicon-dark-mode.ico">
+</head>
+<body>
+    <button id="y" class="topbtn">></button>
+    <div id="toolwrap" style="display: none;">
+        <img src="squarespace.png" alt="SquarePlace Logo">
+        <h1 id="maintitle">SquarePlace</h1>
+        <div id="wrappist">
+            <div class="wrappistitems">
+                <div id="mainbtns">
+                    <button id="x" class="topbtn">X</button>
+                    <button id="dropdown" class="topbtn">Build</button>
+                    <button id="settings" class="topbtn">Settings</button>
+                    <button id="templates" class="topbtn">Templates</button>
+                </div>
+            </div>
+
+            <div class="wrappistitems">
+                <div id="menu" style="display: none;">
+                    <button class="option" id="headbtn">Header</button>            
+                    <button class="option" id="footbtn">Footer</button>                        
+                    <button class="option" id="mainbtn">Main</button>                      
+                    <button class="option" id="navbtn">Nav</button>                        
+                    <button class="option" id="parabtn">Paragraf</button>
+                    <button class="option" id="imgbtn">Image</button>             
+                    <button class="option" id="clearbtn">clear</button>     
+                    <button class="option" id="edit">Edit</button>          
+                </div>
+            </div>
+            
+            <div class="wrappistitems">
+                <div id="templatesmenu" style="display: none;">
+                    <button class="template" id="temp1">Temp 1</button>
+                    <button class="template" id="temp2">Temp 2</button>
+                    <button class="template" id="temp3">Temp 3</button>       
+                </div>
+            </div>
+        </div>
+
+        <div id="toolwrap2">
+            <div id="setmenu" style="display: none;">
+                <label class="switch">Grid:
+                    <input type="checkbox" checked=true id="gridslide">
+                    <span class="slider"></span>
+                </label>
+
+                <label class="switch">Gap:
+                    <input type="checkbox" checked=true id="gapslide">
+                    <span class="slider"></span>
+                </label>
+
+                <label>Background Color:
+                    <input type="color" id="backcolor" class="setting">
+                    <button id="backok">Ok</button>
+                </label>
+                <label>Text Color:
+                    <input type="color" id="textcolor" class="setting">
+                    <button id="textok">Ok</button>
+                </label>
+            </div>
+    
+            <div id="editmenu" style="display: none;">
+                <label>Edit Element
+                    <select id="elspecify">
+                        <option class="specifyopt" value="header">Header</option>
+                        <option class="specifyopt" value="footer">Footer</option>
+                        <option class="specifyopt" value="main">Main</option>
+                        <option class="specifyopt" value="nav">Nav</option>
+                        <option class="specifyopt" value="paragraf">Paragraf</option>
+                    </select>
+                </label>
+                <input type="color" id="clonecolor">
+                <div id="editwrap">
+                    <div id="clonebtnwrap">
+                        <button class="clonebtn" >Add H1</button>
+                        <button class="clonebtn" >Add P</button>
+                        <button class="clonebtn" >Save</button>
+                        <button class="clonebtn" >Clear</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="wrapper1" id="wrapper1">
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+    </div>
+
+    <div class="wrapper2" id="wrapper2" style="display: none;">
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+    </div>
+
+    <div class="wrapper3" id="wrapper3" style="display: none;">
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+        <div class="griditem"></div>
+    </div>
+
+    <div id="cloneelements">
+        <header id="header"></header>
+        <footer id="footer"></footer>
+        <main id="main"></main>
+        <nav id="nav"></nav>
+        <p id="clonep"></p>
+        <div id="clear"></div>
+        <input type="text" id="clonetext" class="cumybtn" placeholder="Text">
+        <p id="paragraf">addddwdada</p>
+        <h1 id="h1">adadadadad</h1>
+        <div id="imgcont"></div>
+        <input type="file" id="imageinput" accept="image/*">
+        <div class="imagediv"  id="imagediv"></div>
+    </div>
+
+    <a href="dritt.html">a</a>
+
+
+    <script src="nettside.js"></script>
+</body>
+</html>
