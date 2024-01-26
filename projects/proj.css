@@ -79,19 +79,7 @@ header a{
     background-size: cover;
     transition: 0.5s;
     cursor: pointer;
-}
-@media (orientation: portrait){
-    #main{
-        grid-template-areas: 
-        "N"
-        "B";
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 8fr;
-    }
-    #projNav{
-        flex-direction: row;
-    }
-    
+    margin: 1em;
 }
 .project:hover{
     border: solid aqua 8px;
@@ -178,4 +166,18 @@ header a{
 }
 .rotate{
     rotate: 90deg;
+}
+@media (orientation: portrait){
+    #main{
+        grid-template-areas: 
+        "N"
+        "B";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 8fr;
+    }
+    #projNav{
+        flex-direction: row;
+        max-height: 10vh;
+    }
+    
 }
