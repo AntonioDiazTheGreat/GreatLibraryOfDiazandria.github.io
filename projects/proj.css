@@ -1,5 +1,65 @@
-
-
+:root{
+    --main: #0b090a;
+    --ui: #161a1d;
+    --text: #b1a7a6;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body{
+    background-color: var(--main);
+    margin: 0;
+    color: var(--text);
+    width: 100%;
+    overflow-x: hidden;
+}
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    height: 9vh;
+    background-color: var(--ui);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2em;
+}
+.bigMenu{
+    gap: 2em;
+}
+.menuButtons{
+    gap: 1em;
+}
+.menuButtons a{
+    font-size: 20px;
+    cursor: pointer;
+}
+button{
+    background-color: none;
+}
+.menu{
+    width: 6em;
+    height: 3em;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    transition: 1s;
+}
+.menuStripes{
+    width: 50%;
+    background-color: var(--text);
+    height: 6px;
+}
+header a{
+    font-size: 32px;
+    text-decoration: none;
+    color: var(--text);
+}
 #main{
     display: grid;
     grid-template-areas: 
@@ -89,28 +149,47 @@
 }
 /* animasjon for nav bar knappen */
 
-.closed {
-    position: absolute;
-    right: -10vw;
-    transition: 1s;
-    animation: fadeOutText 0.5s forwards;
-}
-@keyframes fadeOutText {
-    100%{
+@media (orientation: landscape) {
+    .closed {
+        position: absolute;
+        right: -10vw;
+        transition: 1s;
+        animation: fadeOutText 0.5s forwards;
+    }
+    @keyframes fadeOutText {
+        100%{
+            opacity: 0;
+        }
+    }
+    .open {
+        position: absolute;
+        right: 10vw;
+        transition: 1s;
+        animation: fadeInText 1s forwards;
         opacity: 0;
     }
-}
-.open {
-    position: absolute;
-    right: 10vw;
-    transition: 1s;
-    animation: fadeInText 1s forwards;
-    opacity: 0;
-}
-@keyframes fadeInText {
-    100%{
-        opacity: 1;
+    @keyframes fadeInText {
+        100%{
+            opacity: 1;
+        }
     }
+}
+.menuButtonsPortrait{
+    background-color: var(--ui);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menuButtonsPortrait *{
+    width: 100%;
+    padding: 0.5em;
+    padding-left: 3em;
+    color: var(--text);
+    text-decoration: none;
+}
+.menuButtonsPortrait *:hover{
+    background-color: rgba(10, 10, 10, 0.486);
 }
 .rotate{
     rotate: 90deg;
@@ -127,5 +206,7 @@
         flex-direction: row;
         max-height: 10vh;
     }
-    
+    .menuButtons{
+        display: none;
+    }
 }

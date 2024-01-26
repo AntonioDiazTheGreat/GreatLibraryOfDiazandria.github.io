@@ -59,11 +59,7 @@ function updateProjectsData() {
     localStorage.setItem('projectsData', JSON.stringify(projects));
 }
 
-const isPortraitMode = () => {
-    return window.innerHeight > window.innerWidth;
-};
-
-if(isPortraitMode){
+if(window.innerHeight > window.innerWidth){
     document.querySelector(".menu").addEventListener("click", () =>{
         document.querySelector(".menuButtonsPortrait").style.display = (document.querySelector(".menuButtonsPortrait").style.display == "none") ? "flex": "none";
     })
@@ -75,6 +71,14 @@ else{
         document.querySelector(".menu").classList.toggle("rotate")
     })
 }
-
+document.querySelector("#coverGlass").addEventListener("click", ()=>{
+    document.querySelector("#coverGlass").classList.toggle("movedGlass");
+    document.querySelectorAll(".beaming").forEach(child =>{
+        child.classList.toggle("flashingLights")
+    })
+    document.querySelectorAll(".lightBeamCont").forEach(child =>{
+        child.classList.toggle("spinLights")
+    })
+})
 
 liveUpdating();

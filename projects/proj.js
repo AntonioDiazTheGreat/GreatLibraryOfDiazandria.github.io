@@ -20,11 +20,7 @@ function showDesc(){
         }
     });
 }
-const isPortraitMode = () => {
-    return window.innerHeight > window.innerWidth;
-};
-
-if(isPortraitMode){
+if(window.innerHeight > window.innerWidth){
     document.querySelector(".menu").addEventListener("click", () =>{
         document.querySelector(".menuButtonsPortrait").style.display = (document.querySelector(".menuButtonsPortrait").style.display == "none") ? "flex": "none";
     })

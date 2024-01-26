@@ -2,6 +2,7 @@
     --main: #0b090a;
     --ui: #161a1d;
     --text: #b1a7a6;
+    --gyro: red;
 }
 ::-webkit-scrollbar {
     display: none;
@@ -84,7 +85,6 @@ p{
     padding: 2em;
     height: fit-content;
     width: fit-content;
-    max-width: 70vw;
     display: grid;
     grid-template-areas: 
     "I H"
@@ -92,7 +92,7 @@ p{
     gap: 2em;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 2fr;
-    background-color: var(--ui);
+    background-color: #161a1d9c;
     border-radius: 1em;
 }
 .aboutMe img{
@@ -305,7 +305,181 @@ p{
     height: 70%;
     z-index: 3;
 }
+#rotator{
+    height: 20vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 12em;
+}
+#endPoints{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+#endPoints *{
+    background-color: var(--ui);
+    height: 100%;
+    width: 4%;
+}
+#endPoints div:first-child{
+    border-radius: 1em 0 0 1em;
+}
+#endPoints div:last-child{
+    border-radius: 0 1em 1em 0;
+}
+#gyros{
+    height: 80%;
+    width: 100vw;
+    position: relative;
+}
+#gyro1, #gyro2{
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: repeating-linear-gradient(30deg, var(--gyro), var(--gyro) 15px, transparent 15px, transparent 50px);
+    justify-content: space-evenly;
+    font-size: 40px;
+}
+#gyro1{
+    animation: moveLeft1 20s infinite linear;
+}
+@keyframes moveLeft1 {
+    50%{
+        transform: translateX(-100%);
+    }
+    50.01%{
+        transform: translateX(100%)
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+#gyro2{
+    transform: translateX(100%);
+    animation: moveLeft2 20s infinite linear;
+}
+@keyframes moveLeft2 {
+    100%{
+        transform: translateX(-100%);
+    }
+}
+#gyros h1{
+    color: white;
+}
 
+#nukeButtonCont{
+    background-color: rgb(65, 62, 62);
+    width: 15vw;
+    height: 25vh;
+    margin: auto;
+    border-radius: 4px;
+    position: relative;
+}
+#buttonPlatform{
+    background-color: rgb(22, 22, 22);
+    padding: 1em;
+    border-radius: 8px;
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+#coverGlass{
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.1px);
+    -webkit-backdrop-filter: blur(3.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 90%;
+    height: 90%;
+    z-index: 3;
+    border-radius: 4px;
+    transition: 1s;
+}
+.movedGlass{
+    transform: translateY(-100%);
+}
+#bigButton {
+    display: inline-block;
+    position: absolute;
+    padding: 20px 20px;
+    border: 2px solid #ff0000;
+    border-radius: 100%;
+    background: linear-gradient(to bottom, #ff4d4d, #ff0000);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    transition: 0.3s, transform 0.2s;
+}
+  
+
+#bigButton:active {
+    transform: translateY(2px);
+}
+#warningLightsCont1, #warningLightsCont2{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    justify-content: space-between;
+}
+#warningLightsCont1{
+    top: 0;
+}
+#warningLightsCont2{
+    bottom: 0;
+}
+.warningLight{
+    background-color: rgb(22, 22, 22);
+    border-radius: 1em;
+    width: 30px;
+    height: 30px;
+    margin: 1em;
+    position: relative;
+}
+.warningLight::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+    z-index: 2;
+}
+.lightBeamCont{
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    border-radius: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: 
+    "w w"
+    "w w";
+}
+.flashingLights{
+    background-color: red;
+    opacity: 0.65;
+}
+.spinLights{
+    animation: spin infinite 1s linear;
+}
+@keyframes spin{
+    100%{
+        rotate: 360deg;
+    }
+}
+
+/* #gyro2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(-45deg, #3498db, #3498db 15px, transparent 15px, transparent 50px);
+} */
 
 /* animasjon for nav bar knappen */
 
@@ -354,6 +528,13 @@ p{
 .rotate{
     rotate: 90deg;
 }
+#cityFootCont{
+    width: 100%;
+    position: relative;
+    height: 40vh;
+    background-image: url("src/darkCity.png");
+    background-size: contain;
+}
 @media (orientation: portrait) {
     .aboutMe{
         grid-template-areas: 
@@ -369,7 +550,7 @@ p{
     #sl2 img{
         height: 10vh;
     }
-    .menuButtons{
+    .menuButtons, #nukeButtonCont, #rotator, #cityFootCont{
         display: none;
     }
 }
