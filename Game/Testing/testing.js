@@ -1,4 +1,5 @@
 let boardArray = JSON.parse(localStorage.getItem('boardArray')) || [];
+localStorage.
 let eye = document.getElementById("eyeDetails");
 let blinny = 0;
 let eyeCont = document.getElementById("eyeCont");

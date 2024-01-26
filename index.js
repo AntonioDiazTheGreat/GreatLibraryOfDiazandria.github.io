@@ -8,9 +8,9 @@ logo.addEventListener("mouseout", ()=>{
 })
 
 let projects = JSON.parse(localStorage.getItem('projectsData')) || [
-    {title: "Boss Fighting", backIMG: "src/bossFighting.png", desc: "Et kult spill, litt lange 'transitions' og vanskelig å forstå hvordan man spiller hvis ikke man kan fra før. Men det funker ganske bra.", current: false, site: "/Repo/Game/Testing/testing.html"},
-    {title: "SquarePlace", backIMG: "src/squareplace.png", desc: "En nettside hvor du kan designe en enkel nettside. Du trykker på pilen oppe i venstre hjørne så kommer det en UI som kan brukes til designing. Hva knappene gjør må du finne ut selv.", current: false, site: "/Repo/nettside/squareplace.html"},
-    {title: "Nuke Simulator", backIMG: "src/nuke.png", desc: "Prøvde å lage et strategi spill, dette var tidlig i forhold til når jeg lærte JS så velidg mange if løkker og lite optimalisering.", current: false, site: "/Repo/Nuke/NukeSimulator/nuke.html"}];
+    {title: "Boss Fighting", backIMG: "src/bossFighting.png", desc: "Et kult spill, litt lange 'transitions' og vanskelig å forstå hvordan man spiller hvis ikke man kan fra før. Men det funker ganske bra.", current: false, site: "/Game/Testing/testing.html"},
+    {title: "SquarePlace", backIMG: "src/squareplace.png", desc: "En nettside hvor du kan designe en enkel nettside. Du trykker på pilen oppe i venstre hjørne så kommer det en UI som kan brukes til designing. Hva knappene gjør må du finne ut selv.", current: false, site: "/nettside/squareplace.html"},
+    {title: "Nuke Simulator", backIMG: "src/nuke.png", desc: "Prøvde å lage et strategi spill, dette var tidlig i forhold til når jeg lærte JS så velidg mange if løkker og lite optimalisering.", current: false, site: "/Nuke/NukeSimulator/nuke.html"}];
 
 let buttonsCont = document.querySelector(".menuButtons");
 document.querySelector(".menu").addEventListener("click", ()=>{
