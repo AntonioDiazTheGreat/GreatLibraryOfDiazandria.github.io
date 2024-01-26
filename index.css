@@ -95,17 +95,6 @@ p{
     background-color: var(--ui);
     border-radius: 1em;
 }
-@media (orientation: portrait) {
-    
-    .aboutMe{
-        grid-template-areas: 
-        "I"
-        "H"
-        "T";
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 0.2fr 1fr;
-    }
-  }
 .aboutMe img{
     width: 100%;
     position: relative;
@@ -320,29 +309,44 @@ p{
 
 /* animasjon for nav bar knappen */
 
-.closed {
-    position: absolute;
-    right: -10vw;
-    transition: 1s;
-    animation: fadeOutText 0.5s forwards;
-}
-@keyframes fadeOutText {
-    100%{
+@media (orientation: landscape) {
+    .closed {
+        position: absolute;
+        right: -10vw;
+        transition: 1s;
+        animation: fadeOutText 0.5s forwards;
+    }
+    @keyframes fadeOutText {
+        100%{
+            opacity: 0;
+        }
+    }
+    .open {
+        position: absolute;
+        right: 10vw;
+        transition: 1s;
+        animation: fadeInText 1s forwards;
         opacity: 0;
     }
-}
-.open {
-    position: absolute;
-    right: 10vw;
-    transition: 1s;
-    animation: fadeInText 1s forwards;
-    opacity: 0;
-}
-@keyframes fadeInText {
-    100%{
-        opacity: 1;
+    @keyframes fadeInText {
+        100%{
+            opacity: 1;
+        }
     }
 }
 .rotate{
     rotate: 90deg;
+}
+@media (orientation: portrait) {
+    .aboutMe{
+        grid-template-areas: 
+        "I"
+        "H"
+        "T";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.2fr 1fr;
+    }
+    #sl2{
+        font-size: 20px;
+    }
 }
