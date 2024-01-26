@@ -11,6 +11,7 @@ body{
     margin: 0;
     color: var(--text);
     width: 100%;
+    overflow-x: hidden;
 }
 .flexCenter{
     display: flex;
@@ -61,7 +62,6 @@ header a{
 }
 footer{
     height: 40vh;
-    width: 100vw;
     background-color: var(--ui);
     display: flex;
     align-items: center;
@@ -70,10 +70,10 @@ footer{
 }
 .wrapper{
     position: relative;
+    width: 85vw;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    margin: 11em 0;
+    margin: 11em auto;
     gap: 10em;
     min-height: 70vh;
 }
@@ -334,6 +334,23 @@ p{
         }
     }
 }
+.menuButtonsPortrait{
+    background-color: var(--ui);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menuButtonsPortrait *{
+    width: 100%;
+    padding: 0.5em;
+    padding-left: 3em;
+    color: var(--text);
+    text-decoration: none;
+}
+.menuButtonsPortrait *:hover{
+    background-color: rgba(10, 10, 10, 0.486);
+}
 .rotate{
     rotate: 90deg;
 }
@@ -348,5 +365,11 @@ p{
     }
     #sl2{
         font-size: 20px;
+    }
+    #sl2 img{
+        height: 10vh;
+    }
+    .menuButtons{
+        display: none;
     }
 }

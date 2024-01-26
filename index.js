@@ -13,11 +13,7 @@ let projects = JSON.parse(localStorage.getItem('projectsData')) || [
     {title: "Nuke Simulator", backIMG: "src/nuke.png", desc: "Prøvde å lage et strategi spill, dette var tidlig i forhold til når jeg lærte JS så velidg mange if løkker og lite optimalisering.", current: false, site: "/Nuke/NukeSimulator/nuke.html"}];
 
 let buttonsCont = document.querySelector(".menuButtons");
-document.querySelector(".menu").addEventListener("click", ()=>{
-    buttonsCont.classList.toggle("closed");
-    buttonsCont.classList.toggle("open");
-    document.querySelector(".menu").classList.toggle("rotate")
-})
+
 
 function angle(cx, cy, ex, ey){
     const dy = ey - cy;
@@ -62,5 +58,23 @@ document.querySelectorAll(".slideLink").forEach(link =>{
 function updateProjectsData() {
     localStorage.setItem('projectsData', JSON.stringify(projects));
 }
+
+const isPortraitMode = () => {
+    return window.innerHeight > window.innerWidth;
+};
+
+if(isPortraitMode){
+    document.querySelector(".menu").addEventListener("click", () =>{
+        document.querySelector(".menuButtonsPortrait").style.display = (document.querySelector(".menuButtonsPortrait").style.display == "none") ? "flex": "none";
+    })
+}
+else{
+    document.querySelector(".menu").addEventListener("click", ()=>{
+        buttonsCont.classList.toggle("closed");
+        buttonsCont.classList.toggle("open");
+        document.querySelector(".menu").classList.toggle("rotate")
+    })
+}
+
 
 liveUpdating();
