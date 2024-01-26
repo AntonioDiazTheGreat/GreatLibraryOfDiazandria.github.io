@@ -14,7 +14,9 @@ let projects = JSON.parse(localStorage.getItem('projectsData')) || [
 
 let buttonsCont = document.querySelector(".menuButtons");
 document.querySelector(".menu").addEventListener("click", ()=>{
-    buttonsCont.style.display = (buttonsCont.style.display == "none") ? "flex" : "none";
+    buttonsCont.classList.toggle("closed");
+    buttonsCont.classList.toggle("open");
+    document.querySelector(".menu").classList.toggle("rotate")
 })
 
 function angle(cx, cy, ex, ey){

@@ -3,13 +3,16 @@
     --ui: #161a1d;
     --text: #b1a7a6;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 body{
     background-color: var(--main);
     margin: 0;
     overflow-x: hidden;
     color: var(--text);
 }
-.binger{
+.flexCenter{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,15 +39,18 @@ button{
     background-color: none;
 }
 .menu{
-    width: 3em;
+    width: 6em;
     height: 3em;
     flex-direction: column;
     justify-content: space-evenly;
     overflow: hidden;
     cursor: pointer;
+    position: absolute;
+    right: 0;
+    transition: 1s;
 }
 .tripalovski{
-    width: 100%;
+    width: 50%;
     background-color: var(--text);
     height: 6px;
 }
@@ -54,18 +60,13 @@ header a{
     color: var(--text);
 }
 footer{
-    height: 6vh;
+    height: 40vh;
     width: 100vw;
     background-color: var(--ui);
     display: flex;
     align-items: center;
-    position: sticky;
     bottom: 0;
     z-index: 10;
-}
-footer img{
-    height: 8vh;
-    filter: invert(0.7);
 }
 .wrapper{
     position: relative;
@@ -318,4 +319,34 @@ p{
     width: 50%;
     height: 70%;
     z-index: 3;
+}
+
+
+/* animasjon for nav bar knappen */
+
+.closed {
+    position: absolute;
+    right: -10vw;
+    transition: 1s;
+    animation: fadeOutText 0.5s forwards;
+}
+@keyframes fadeOutText {
+    100%{
+        opacity: 0;
+    }
+}
+.open {
+    position: absolute;
+    right: 10vw;
+    transition: 1s;
+    animation: fadeInText 1s forwards;
+    opacity: 0;
+}
+@keyframes fadeInText {
+    100%{
+        opacity: 1;
+    }
+}
+.rotate{
+    rotate: 90deg;
 }
