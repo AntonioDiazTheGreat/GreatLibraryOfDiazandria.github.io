@@ -1,4 +1,6 @@
 let logo = document.getElementById("mainLogo");
+let nuking = false;
+
 
 logo.addEventListener("mouseover", ()=>{
     logo.innerHTML = "The Great Library of Diazandria"
@@ -72,13 +74,23 @@ else{
     })
 }
 document.querySelector("#coverGlass").addEventListener("click", ()=>{
-    document.querySelector("#coverGlass").classList.toggle("movedGlass");
-    document.querySelectorAll(".beaming").forEach(child =>{
-        child.classList.toggle("flashingLights")
-    })
-    document.querySelectorAll(".lightBeamCont").forEach(child =>{
-        child.classList.toggle("spinLights")
-    })
+    if(nuking != true){
+        document.querySelector("#coverGlass").classList.toggle("movedGlass");
+        document.querySelectorAll(".beaming").forEach(child =>{
+            child.classList.toggle("flashingLights")
+        })
+        document.querySelectorAll(".lightBeamCont").forEach(child =>{
+            child.classList.toggle("spinLights")
+        })
+    }
+})
+
+document.querySelector("#bigButton").addEventListener("click", ()=>{
+    nuking = true;
+    document.getElementById('deployChute').classList.add('active');
+    setTimeout(() => {
+        document.querySelector("#atomBomb").classList.add("dropBomb");
+    }, 2000);
 })
 
 liveUpdating();

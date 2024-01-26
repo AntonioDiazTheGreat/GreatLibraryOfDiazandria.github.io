@@ -387,6 +387,7 @@ p{
     position: relative;
     width: 90px;
     height: 90px;
+    z-index: 2;
 }
 #coverGlass{
     /* From https://css.glass */
@@ -471,6 +472,31 @@ p{
 @keyframes spin{
     100%{
         rotate: 360deg;
+    }
+}
+#deployChute{
+    position: absolute;
+    background-color: var(--main);
+    bottom: 0;
+    height: 20%;
+    width: 0;
+    transition: width 0.8s ease;
+}
+#deployChute.active {
+    width: 40%;
+}
+#atomBomb{
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+.dropBomb{
+    animation: dropIt 6s ease-in;
+}
+@keyframes dropIt{
+    100%{
+        transform: translateY(650px);
     }
 }
 
