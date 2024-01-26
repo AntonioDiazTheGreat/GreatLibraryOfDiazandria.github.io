@@ -50,7 +50,7 @@ button{
     right: 0;
     transition: 1s;
 }
-.tripalovski{
+.menuStripes{
     width: 50%;
     background-color: var(--text);
     height: 6px;

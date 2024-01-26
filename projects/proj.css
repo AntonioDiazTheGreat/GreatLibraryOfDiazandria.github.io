@@ -1,57 +1,5 @@
-:root{
-    --main: #0b090a;
-    --ui: #161a1d;
-    --text: #b1a7a6;
-}
-body{
-    background-color: var(--main);
-    margin: 0;
-    overflow-x: hidden;
-    color: var(--text);
-}
 
-.flexCenter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header{
-    height: 9vh;
-    background-color: var(--ui);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2em;
-}
-.bigMenu{
-    gap: 2em;
-}
-.menuButtons{
-    gap: 1em;
-}
-.menuButtons a{
-    font-size: 20px;
-    cursor: pointer;
-}
-.menu{
-    width: 3em;
-    height: 3em;
-    flex-direction: column;
-    justify-content: space-evenly;
-    overflow: hidden;
-    cursor: pointer;
-    transition: 0.5s
-}
-.menuStripes{
-    width: 100%;
-    background-color: var(--text);
-    height: 6px;
-}
-header a{
-    font-size: 32px;
-    text-decoration: none;
-    color: var(--text);
-}
+
 #main{
     display: grid;
     grid-template-areas: 
@@ -82,7 +30,7 @@ header a{
     margin: 1em;
 }
 .project:hover{
-    border: solid aqua 8px;
+    border: solid aqua 3px;
 }
 #projDesc {
     grid-area: "B";

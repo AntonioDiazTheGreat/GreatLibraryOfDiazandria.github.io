@@ -20,12 +20,23 @@ function showDesc(){
         }
     });
 }
+const isPortraitMode = () => {
+    return window.innerHeight > window.innerWidth;
+};
 
-document.querySelector(".menu").addEventListener("click", ()=>{
-    buttonsCont.classList.toggle("closed");
-    buttonsCont.classList.toggle("open");
-    document.querySelector(".menu").classList.toggle("rotate")
-})
+if(isPortraitMode){
+    document.querySelector(".menu").addEventListener("click", () =>{
+        document.querySelector(".menuButtonsPortrait").style.display = (document.querySelector(".menuButtonsPortrait").style.display == "none") ? "flex": "none";
+    })
+}
+else{
+    document.querySelector(".menu").addEventListener("click", ()=>{
+        buttonsCont.classList.toggle("closed");
+        buttonsCont.classList.toggle("open");
+        document.querySelector(".menu").classList.toggle("rotate")
+    })
+}
+
 
 document.querySelectorAll(".project").forEach(btn =>{
     btn.addEventListener("click", ()=>{
