@@ -9,7 +9,8 @@ body{
     overflow-x: hidden;
     color: var(--text);
 }
-.binger{
+
+.flexCenter{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,8 +40,9 @@ header{
     justify-content: space-evenly;
     overflow: hidden;
     cursor: pointer;
+    transition: 0.5s
 }
-.tripalovski{
+.menuStripes{
     width: 100%;
     background-color: var(--text);
     height: 6px;
@@ -70,20 +72,29 @@ header a{
 .project{
     height: 100%;
     width: 100%;
-    border-radius: 100%;
-    border: solid var(--main) 4px;
+    border-radius: 1em;
+    border: solid var(--text) 3px;
     overflow: hidden;
     background-position: center;
     background-size: cover;
+    transition: 0.5s;
+    cursor: pointer;
 }
-#projNav .project:first-child{
-    background-image: url(src/bossFighting.png);
+@media (orientation: portrait){
+    #main{
+        grid-template-areas: 
+        "N"
+        "B";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 8fr;
+    }
+    #projNav{
+        flex-direction: row;
+    }
+    
 }
-#projNav .project:nth-child(2){
-    background-image: url(src/squareplace.png);
-}
-#projNav .project:nth-child(3){
-    background-image: url(src/nuke.png);
+.project:hover{
+    border: solid aqua 8px;
 }
 #projDesc {
     grid-area: "B";
@@ -139,4 +150,32 @@ header a{
     text-decoration: none;
     font-size: 32px;
     text-align: center;
+}
+/* animasjon for nav bar knappen */
+
+.closed {
+    position: absolute;
+    right: -10vw;
+    transition: 1s;
+    animation: fadeOutText 0.5s forwards;
+}
+@keyframes fadeOutText {
+    100%{
+        opacity: 0;
+    }
+}
+.open {
+    position: absolute;
+    right: 10vw;
+    transition: 1s;
+    animation: fadeInText 1s forwards;
+    opacity: 0;
+}
+@keyframes fadeInText {
+    100%{
+        opacity: 1;
+    }
+}
+.rotate{
+    rotate: 90deg;
 }

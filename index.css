@@ -92,13 +92,8 @@ p{
     gap: 2em;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 2fr;
-    
-    background: rgba(22, 26, 29, 0.8);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.9px);
-    -webkit-backdrop-filter: blur(5.9px);
-    border: 1px solid rgba(22, 26, 29, 0.52);
+    background-color: var(--ui);
+    border-radius: 1em;
 }
 @media (orientation: portrait) {
     .aboutMe{

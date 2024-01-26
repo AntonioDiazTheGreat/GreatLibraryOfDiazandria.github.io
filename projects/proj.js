@@ -1,7 +1,4 @@
 let buttonsCont = document.querySelector(".menuButtons");
-document.querySelector(".menu").addEventListener("click", ()=>{
-    buttonsCont.style.display = (buttonsCont.style.display == "none") ? "flex" : "none";
-})
 let logo = document.getElementById("mainLogo");
 
 logo.addEventListener("mouseover", ()=>{
@@ -23,6 +20,12 @@ function showDesc(){
         }
     });
 }
+
+document.querySelector(".menu").addEventListener("click", ()=>{
+    buttonsCont.classList.toggle("closed");
+    buttonsCont.classList.toggle("open");
+    document.querySelector(".menu").classList.toggle("rotate")
+})
 
 document.querySelectorAll(".project").forEach(btn =>{
     btn.addEventListener("click", ()=>{
