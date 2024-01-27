@@ -91,6 +91,11 @@ let shockWave = document.getElementById("shockWave");
 let deathBeam = document.getElementById("deathBeam");
 let effectCont = document.getElementById("effectCont");
 let slice = document.getElementById("slice");
+let startupSound = document.getElementById("firstExplo");
+startupSound.volume = 0.2;
+let endSound = document.getElementById("lastExplo");
+endSound.volume = 0.2;
+endSound.currentTime = 1;
 
 document.querySelector("#bigButton").addEventListener("click", ()=>{
     nuking = true;
@@ -98,6 +103,9 @@ document.querySelector("#bigButton").addEventListener("click", ()=>{
     setTimeout(() => {
         document.querySelector("#theBomba").classList.add("dropBomb");
         document.querySelector("#bombaRotationCont").classList.add("rotateBomb");
+        setTimeout(() => {
+            startupSound.play();
+        }, 4500);
         setTimeout(() => {
             document.body.classList.toggle("nukeShake");
             bombBlast.style.display="block"
@@ -107,9 +115,11 @@ document.querySelector("#bigButton").addEventListener("click", ()=>{
                 shockWave.classList.toggle("expandShock");
                 effectCont.classList.toggle("flash");
                 setTimeout(() => {
+                    startupSound.pause();
                     effectCont.style.backgroundColor="black";
                     slice.classList.toggle("slicing");
                     setTimeout(() => {
+                        endSound.play();
                         slice.style.display="none"
                         effectCont.classList.add("beamFlash");
                         shockWave.style.display="none";
@@ -120,6 +130,7 @@ document.querySelector("#bigButton").addEventListener("click", ()=>{
                         void document.body.offsetWidth;
                         document.body.classList.add("nukeShake");
                         setTimeout(() => {
+                            endSound.pause();
                             deathBeam.style.display="none";
                             document.getElementById("nukeButtonCont").style.display="none";
                             document.getElementById("cityFootCont").style.display="none";

@@ -678,7 +678,7 @@ p{
     }
 }
 .nukeShake{
-    animation: shake 0.5s linear 12;
+    animation: shake 0.5s linear 10;
 }
 @keyframes shake {
     25%{
@@ -723,7 +723,7 @@ p{
     animation: slice 1s linear;
 }
 @keyframes slice{
-    30%{
+    50%{
         height: 0;
     }
     100%{
