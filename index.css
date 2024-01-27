@@ -375,8 +375,8 @@ p{
 
 #nukeButtonCont{
     background-color: rgb(65, 62, 62);
-    width: 15vw;
-    height: 25vh;
+    width: 250px;
+    height: 230px;
     margin: auto;
     border-radius: 4px;
     position: relative;
@@ -678,7 +678,7 @@ p{
     }
 }
 .nukeShake{
-    animation: shake 0.5s linear 10;
+    animation: shake 0.5s linear 12;
 }
 @keyframes shake {
     25%{
