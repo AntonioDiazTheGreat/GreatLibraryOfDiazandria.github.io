@@ -85,6 +85,13 @@ document.querySelector("#coverGlass").addEventListener("click", ()=>{
     }
 })
 
+
+let bombBlast = document.getElementById("bombBlast");
+let shockWave = document.getElementById("shockWave");
+let deathBeam = document.getElementById("deathBeam");
+let effectCont = document.getElementById("effectCont");
+let slice = document.getElementById("slice");
+
 document.querySelector("#bigButton").addEventListener("click", ()=>{
     nuking = true;
     document.getElementById('deployChute').classList.add('active');
@@ -93,28 +100,37 @@ document.querySelector("#bigButton").addEventListener("click", ()=>{
         document.querySelector("#bombaRotationCont").classList.add("rotateBomb");
         setTimeout(() => {
             document.body.classList.toggle("nukeShake");
-            document.getElementById("bombBlast").style.display="block"
-            document.getElementById("bombBlast").classList.toggle("boom")
+            bombBlast.style.display="block"
+            bombBlast.classList.toggle("boom")
             setTimeout(() => {
-                document.getElementById("shockWave").style.display="block";
-                document.getElementById("shockWave").classList.toggle("expandShock");
-                document.getElementById("effectCont").classList.toggle("flash");
+                shockWave.style.display="block";
+                shockWave.classList.toggle("expandShock");
+                effectCont.classList.toggle("flash");
                 setTimeout(() => {
-                    document.getElementById("shockWave").style.display="none";
-                    document.getElementById("bombBlast").style.display="none";
-                    document.getElementById("deathBeam").style.display="block";
-                    document.getElementById("deathBeam").classList.toggle("fadeToLight")
+                    effectCont.style.backgroundColor="black";
+                    slice.classList.toggle("slicing");
                     setTimeout(() => {
-                        document.getElementById("deathBeam").style.display="none";
-                        document.getElementById("nukeButtonCont").style.display="none";
-                        document.getElementById("cityFootCont").style.display="none";
-                        document.getElementById("rotator").style.display="none";
-                        const root = document.documentElement;
+                        slice.style.display="none"
+                        effectCont.classList.add("beamFlash");
+                        shockWave.style.display="none";
+                        document.getElementById("bombBlast").style.display="none";
+                        deathBeam.style.display="block";
+                        deathBeam.classList.toggle("fadeToLight")
+                        document.body.classList.remove("nukeShake");
+                        void document.body.offsetWidth;
+                        document.body.classList.add("nukeShake");
+                        setTimeout(() => {
+                            deathBeam.style.display="none";
+                            document.getElementById("nukeButtonCont").style.display="none";
+                            document.getElementById("cityFootCont").style.display="none";
+                            document.getElementById("rotator").style.display="none";
+                            const root = document.documentElement;
 
-                        root.style.setProperty('--main', 'white');
-                        root.style.setProperty('--ui', 'gray');
-                        root.style.setProperty('--text', 'black');
-                    }, 5000);
+                            root.style.setProperty('--main', 'white');
+                            root.style.setProperty('--ui', 'gray');
+                            root.style.setProperty('--text', 'black');
+                        }, 5000);
+                    }, 900);
                 }, 1000);
             }, 5000);
         }, 4000);

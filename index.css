@@ -67,7 +67,6 @@ footer{
     display: flex;
     align-items: center;
     bottom: 0;
-    z-index: 2;
     position: relative;
 }
 .wrapper{
@@ -647,12 +646,18 @@ p{
     transform: translate(-50%, -50%);
 }
 .expandShock{
-    animation: expand 0.5s linear 2;
+    animation: expand 1s linear forwards;
 }
 @keyframes expand{
-    100%{
+    50%{
         width: 3000px;
         height: 3000px;
+    }
+    50.1%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
     }
 }
 #effectCont{
@@ -662,6 +667,7 @@ p{
     height: 100%;
     z-index: 10;
     pointer-events: none;
+    align-items: end;
 }
 .flash{
     animation: flasher 0.25s linear 4;
@@ -672,7 +678,7 @@ p{
     }
 }
 .nukeShake{
-    animation: shake 0.5s linear 15;
+    animation: shake 0.5s linear 10;
 }
 @keyframes shake {
     25%{
@@ -706,6 +712,34 @@ p{
     100%{
         background-color: white;
         width: 100vw;
+    }
+}
+#slice{
+    background-color: red;
+    width: 10px;
+    height: 0;
+}
+.slicing{
+    animation: slice 1s linear;
+}
+@keyframes slice{
+    30%{
+        height: 0;
+    }
+    100%{
+        height: 150vh;
+    }
+}
+.beamFlash{
+    animation: beamFlash 1s linear 3 forwards;
+    opacity: 0.5;
+}
+@keyframes beamFlash{
+    50%{
+        background-color: red;
+    }
+    100%{
+        opacity: 0;
     }
 }
 /* #gyro2{
