@@ -89,7 +89,8 @@ document.querySelector("#bigButton").addEventListener("click", ()=>{
     nuking = true;
     document.getElementById('deployChute').classList.add('active');
     setTimeout(() => {
-        document.querySelector("#atomBomb").classList.add("dropBomb");
+        document.querySelector("#theBomba").classList.add("dropBomb");
+        document.querySelector("#bombaRotationCont").classList.add("rotateBomb");
     }, 2000);
 })
 

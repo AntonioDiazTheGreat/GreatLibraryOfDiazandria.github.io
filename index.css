@@ -67,7 +67,8 @@ footer{
     display: flex;
     align-items: center;
     bottom: 0;
-    z-index: 10;
+    z-index: 2;
+    position: relative;
 }
 .wrapper{
     position: relative;
@@ -478,26 +479,132 @@ p{
     position: absolute;
     background-color: var(--main);
     bottom: 0;
-    height: 20%;
+    height: 24%;
     width: 0;
     transition: width 0.8s ease;
+    z-index: 0;
 }
 #deployChute.active {
-    width: 40%;
-}
-#atomBomb{
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    position: absolute;
+    width: 50%;
 }
 .dropBomb{
-    animation: dropIt 6s ease-in;
+    animation: dropIt 4s ease-in;
 }
 @keyframes dropIt{
     100%{
-        transform: translateY(650px);
+        transform: translate(-3000px, 3000px);
     }
+}
+
+#theBomba{
+    width: 500px;
+    height: 200px;
+    display: flex;
+    margin: auto;
+    scale: 18%;
+    position: absolute;
+    rotate: -45deg;
+    z-index: 0;
+}
+#bombaRotationCont{
+    display: flex;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+}
+.rotateBomb{
+    animation: rotate 4s linear;
+}
+@keyframes rotate{
+    100%{
+        rotate: -45deg;
+    }
+}
+
+#bombaTip{
+    background-color: #1b1d22;
+    z-index: -1;
+    width: 45%;
+    height: 50%;
+    scale: 200%;
+    transform: translateY(25%);
+    border-radius: 100% 0 0 100%;
+    
+}
+#bombaBody{
+    background-color: #1b1d22;
+    width: 80%;
+}
+#reactorBelt{
+    background-color: gray;
+    height: 100%;
+    width: 50px;
+    position: relative;
+    border: solid black 4px;
+    box-sizing: border-box;
+}
+#reactor{
+    background-color: rgb(128, 7, 7);
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: solid black 4px;
+    position: absolute;
+}
+#bombaTailCont{
+    width: 70%;
+}
+#bombaTail{
+    position: absolute;
+    border-top: transparent solid 100px;
+    border-bottom: transparent solid 100px;
+    border-left: solid var(--ui) 250px;
+}
+#bombaTailStreamer{
+    position: absolute;
+    background-color: gray;
+    border: solid black 3px;
+    width: 200px;
+    height: 30px;
+    transform: translate(-60%,-50%);
+    border-radius: 90px;
+}
+#bombaTailStreamer::before, #bombaTailStreamer::after{
+    background-color: black;
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 40px;
+    left: 55%;
+}
+#bombaTailStreamer::before{
+    top: 100%;
+}
+#bombaTailStreamer::after{
+    bottom: 100%;
+}
+.bombaTailPiece{
+    position: absolute;
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+    right: -50px;
+    z-index: -1;
+    border: solid black 4px;
+}
+.bombaTailPiece::before{
+    content: "";
+    position: absolute;
+    border-bottom: transparent solid 100px;
+    border-right: solid gray 70px;
+    transform: translateX(-100%);
+}
+.bombaTailPiece:first-child{
+    bottom: 0;
+}
+.bombaTailPiece:first-child::before{
+    border-top: transparent solid 100px;
+    border-right: solid gray 70px;
 }
 
 /* #gyro2{
