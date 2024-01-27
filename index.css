@@ -119,6 +119,7 @@ p{
     position: relative;
     min-width: 70vw;
     max-height: 70vh;
+    color: var(--text);
 }
 .slider{
     display: flex;
@@ -283,7 +284,7 @@ p{
     position: relative;
 }
 #sl2{
-    color: white;
+    color: var(--text);
     font-size: 40px;
     position: relative;
 }
@@ -293,7 +294,7 @@ p{
 #sl3{
     display: flex;
     flex-direction: column;
-    color: white;
+    color: var(--text);
     font-size: 20px;
     position: relative;
 }
@@ -606,7 +607,107 @@ p{
     border-top: transparent solid 100px;
     border-right: solid gray 70px;
 }
-
+#bombBlast{
+    background-color: rgb(211, 139, 5);
+    border: solid red 2px;
+    width: 2px;
+    height: 2px;
+    border-radius: 100%;
+    transform: translateY(50%);
+    transition: 1s;
+    z-index: 3;
+}
+.boom{
+    animation: goBoom 5s ease-in forwards;
+}
+@keyframes goBoom{
+    95%{
+        width: 100px;
+        height: 100px;
+    }
+    100%{
+        width: 400px;
+        height: 400px;
+    }
+}
+#shockWaveLimiter{
+    height: 100%;
+    width: 100%;
+    align-items: end;
+    overflow: hidden;
+}
+#shockWave{
+    width: 400px;
+    height: 400px;
+    border: solid white 12px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.expandShock{
+    animation: expand 0.5s linear 2;
+}
+@keyframes expand{
+    100%{
+        width: 3000px;
+        height: 3000px;
+    }
+}
+#effectCont{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+.flash{
+    animation: flasher 0.25s linear 4;
+}
+@keyframes flasher{
+    100%{
+        background-color: white;
+    }
+}
+.nukeShake{
+    animation: shake 0.5s linear 15;
+}
+@keyframes shake {
+    25%{
+        rotate: 0.5deg;
+    }
+    50%{
+        rotate: -0.5deg;
+    }
+    75%{
+        rotate: 0.5deg;
+    }
+}
+#deathBeam{
+    position: absolute;
+    background-color: rgb(211, 139, 5);
+    border: solid red 12px;
+    border-top: none;
+    border-bottom: none;
+    height: 400vh;
+    width: 10vw;
+    z-index: 2;
+}
+.fadeToLight{
+    animation: fade 5s linear;
+}
+@keyframes fade{
+    50%{
+        width: 100vw;
+        background-color: rgb(211, 139, 5);
+    }
+    100%{
+        background-color: white;
+        width: 100vw;
+    }
+}
 /* #gyro2{
     position: absolute;
     width: 100%;
@@ -667,6 +768,7 @@ p{
     height: 40vh;
     background-image: url("src/darkCity.png");
     background-size: contain;
+    align-items: end;
 }
 @media (orientation: portrait) {
     .aboutMe{

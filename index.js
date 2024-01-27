@@ -91,6 +91,33 @@ document.querySelector("#bigButton").addEventListener("click", ()=>{
     setTimeout(() => {
         document.querySelector("#theBomba").classList.add("dropBomb");
         document.querySelector("#bombaRotationCont").classList.add("rotateBomb");
+        setTimeout(() => {
+            document.body.classList.toggle("nukeShake");
+            document.getElementById("bombBlast").style.display="block"
+            document.getElementById("bombBlast").classList.toggle("boom")
+            setTimeout(() => {
+                document.getElementById("shockWave").style.display="block";
+                document.getElementById("shockWave").classList.toggle("expandShock");
+                document.getElementById("effectCont").classList.toggle("flash");
+                setTimeout(() => {
+                    document.getElementById("shockWave").style.display="none";
+                    document.getElementById("bombBlast").style.display="none";
+                    document.getElementById("deathBeam").style.display="block";
+                    document.getElementById("deathBeam").classList.toggle("fadeToLight")
+                    setTimeout(() => {
+                        document.getElementById("deathBeam").style.display="none";
+                        document.getElementById("nukeButtonCont").style.display="none";
+                        document.getElementById("cityFootCont").style.display="none";
+                        document.getElementById("rotator").style.display="none";
+                        const root = document.documentElement;
+
+                        root.style.setProperty('--main', 'white');
+                        root.style.setProperty('--ui', 'gray');
+                        root.style.setProperty('--text', 'black');
+                    }, 5000);
+                }, 1000);
+            }, 5000);
+        }, 4000);
     }, 2000);
 })
 
