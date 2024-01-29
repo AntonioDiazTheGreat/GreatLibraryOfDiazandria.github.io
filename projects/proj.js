@@ -1,6 +1,41 @@
 let buttonsCont = document.querySelector(".menuButtons");
 let logo = document.getElementById("mainLogo");
 
+function setWebsiteMode() {
+    const savedMode = localStorage.getItem('websiteMode');
+
+    if (savedMode === 'light') {
+        updateRootColors('light');}
+    else {
+        localStorage.setItem('websiteMode', 'dark');
+        updateRootColors('dark');
+    }
+}
+
+document.getElementById("dark").addEventListener("click", ()=>{
+    if(localStorage.getItem('websiteMode') == "dark"){
+        localStorage.setItem('websiteMode', 'light');
+    }
+    else{
+        localStorage.setItem('websiteMode', 'dark');
+    }
+    setWebsiteMode();
+})
+
+function updateRootColors(mode) {
+    if (mode === 'light') {
+      document.documentElement.style.setProperty('--main', 'white');
+      document.documentElement.style.setProperty('--ui', 'gray');
+      document.documentElement.style.setProperty('--text', 'black');
+    } else {
+      document.documentElement.style.setProperty('--main', '#0b090a');
+      document.documentElement.style.setProperty('--ui', '#161a1d');
+      document.documentElement.style.setProperty('--text', '#b1a7a6');
+    }
+}
+  
+window.onload = setWebsiteMode;
+
 logo.addEventListener("mouseover", ()=>{
     logo.innerHTML = "The Great Library of Diazandria"
 })

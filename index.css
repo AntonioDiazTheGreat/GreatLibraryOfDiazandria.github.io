@@ -92,7 +92,7 @@ p{
     gap: 2em;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 2fr;
-    background-color: #161a1d9c;
+    background-color: var(--ui);
     border-radius: 1em;
 }
 .aboutMe img{
@@ -283,7 +283,7 @@ p{
     position: relative;
 }
 #sl2{
-    color: var(--text);
+    color: white;
     font-size: 40px;
     position: relative;
 }
@@ -293,7 +293,7 @@ p{
 #sl3{
     display: flex;
     flex-direction: column;
-    color: var(--text);
+    color: white;
     font-size: 20px;
     position: relative;
 }
@@ -742,12 +742,86 @@ p{
         opacity: 0;
     }
 }
-/* #gyro2{
+.fractal{
     position: absolute;
-    width: 100%;
+    border-top: solid blue 1000px;
+    border-left: solid transparent 150px;
+    border-right: solid transparent 150px;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
+#sunCont{
+    background-color: yellow;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    margin: auto;
+    position: relative;
+    z-index: 10;
+}
+#sun{
+    position: absolute;
+    background-color: inherit;
     height: 100%;
-    background: repeating-linear-gradient(-45deg, #3498db, #3498db 15px, transparent 15px, transparent 50px);
-} */
+    border-radius: 100%;
+    width: 100%;
+    z-index: 4;
+}
+#sunSpikeCont{
+    position: relative;
+    z-index: -1;
+}
+.sunTriangle{
+    border-left: solid transparent 150px;
+    border-right: solid transparent 150px;
+    border-top: solid yellow 270px;
+    scale: 150%;
+    position: absolute;
+    transform: translateY(16.5%);
+}
+
+.sunTransition{
+    animation: sunTrans 15s linear forwards;
+    transform: translateY(30%);
+    transition: 1s;
+}
+@keyframes sunTrans {
+    25%{
+        background-color: yellow;
+    }
+    30%{
+        scale: 70%;
+        background-color: white;
+    }
+    80%{
+        scale: 70%;
+    }
+    90%{
+        scale: 3000%;
+        background-color: white;
+        rotate: 1080deg;
+    }
+    100%{
+        scale: 3000%;
+        background-color: black;
+        rotate: 1080deg;
+    }
+}
+.spikesTransition{
+    animation: spikesTrans 4s linear forwards;
+}
+@keyframes spikesTrans {
+    90%{
+        opacity: 1;
+    }
+   100%{
+        scale: 65%;
+        opacity: 0;
+   }
+}
+
+
 
 /* animasjon for nav bar knappen */
 
