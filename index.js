@@ -20,7 +20,6 @@ function updateRootColors(mode) {
         document.getElementById("nukeButtonCont").style.display="none";
         document.getElementById("cityFootCont").style.display="none";
         document.getElementById("rotator").style.display="none";
-        sun.style.display="flex";
         document.documentElement.style.setProperty('--main', '#87CEEB');
         document.documentElement.style.setProperty('--ui', '#D3D3D3');
         document.documentElement.style.setProperty('--text', '#333333');}
