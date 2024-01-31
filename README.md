@@ -15,3 +15,6 @@ Funker ikke å frem og tilbake mellom sider, du kan trykke på prosjektene for �
 For å se kul dark mode til light mode transition trykk på den store røde knappen. For å se light mode til dark mode transition trykk på solen.
 
 Prosjekt slideren er scrollbar samt du kan trykke på de grå prikkene under.
+
+Link til nettside: 
+https://antoniodiazthegreat.github.io/GreatLibraryOfDiazandria.github.io/
