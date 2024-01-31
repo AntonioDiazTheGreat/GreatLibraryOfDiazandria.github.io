@@ -26,9 +26,6 @@ function updateRootColors(mode) {
         document.documentElement.style.setProperty('--text', '#333333');}
         else {
             sun.style.display="none";
-        document.getElementById("nukeButtonCont").style.display="flex";
-        document.getElementById("cityFootCont").style.display="flex";
-        document.getElementById("rotator").style.display="flex";
         document.documentElement.style.setProperty('--main', '#0b090a');
         document.documentElement.style.setProperty('--ui', '#161a1d');
         document.documentElement.style.setProperty('--text', '#b1a7a6');
