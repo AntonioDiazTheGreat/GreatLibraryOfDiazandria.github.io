@@ -98,8 +98,17 @@ document.querySelectorAll(".slideLink").forEach(link =>{
 function updateProjectsData() {
     localStorage.setItem('projectsData', JSON.stringify(projects));
 }
+
+function checkOrientation(){
+    if(window.innerHeight > window.innerWidth){
+        return "portrait"
+    }
+    else{
+        return "landscape"
+    }
+}
 /* setter ulike menu dropdowns utifra landscape eller portrait mode */
-if(window.innerHeight > window.innerWidth){
+if(checkOrientation() == "portrait"){
     document.querySelector(".menu").addEventListener("click", () =>{
         document.querySelector(".menuButtonsPortrait").style.display = (document.querySelector(".menuButtonsPortrait").style.display == "none") ? "flex": "none";
     })
